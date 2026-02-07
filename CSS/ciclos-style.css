@@ -1,0 +1,502 @@
+/* ===================================
+   CICLOS - ESTILOS PRINCIPALES
+   =================================== */
+
+/* Body Background */
+body {
+    background-image: url('https://viajaresdescubrir.com/wp-content/uploads/2023/01/vegetacion-selva-tropical-1024x683.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Menú Horizontal de Ciclos */
+.ciclos-menu-section {
+    background: transparent;
+    padding: 20px 20px;
+    position: sticky;
+    top: 80px;
+    z-index: 50;
+    box-shadow: none;
+}
+
+.ciclos-horizontal-menu {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ciclos-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ciclos-menu-item {
+    position: relative;
+}
+
+.ciclos-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.8);
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ciclos-menu-link:hover {
+    background: rgba(255,255,255,0.25);
+    border-color: rgba(255,255,255,0.5);
+    color: white;
+    transform: scale(1.05);
+}
+
+.ciclos-menu-link.active {
+    background: #f9c74f;
+    border-color: #f9c74f;
+    color: #0d2b1e;
+    font-weight: 600;
+}
+
+.ciclos-icon {
+    font-size: 1.2rem;
+}
+
+/* Submenu del Carbono */
+.ciclos-menu-item.has-submenu {
+    position: relative;
+}
+
+.ciclos-dropdown-btn {
+    position: relative;
+}
+
+.ciclos-dropdown-icon {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.ciclos-submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 43, 30, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.ciclos-menu-item.has-submenu:hover .ciclos-submenu,
+.ciclos-menu-item.has-submenu.active .ciclos-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.ciclos-menu-item.has-submenu:hover .ciclos-dropdown-icon,
+.ciclos-menu-item.has-submenu.active .ciclos-dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.ciclos-submenu li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.ciclos-submenu li:last-child {
+    border-bottom: none;
+}
+
+.ciclos-submenu a {
+    display: block;
+    padding: 12px 20px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ciclos-submenu a:hover {
+    background: rgba(249, 199, 79, 0.2);
+    color: #f9c74f;
+    padding-left: 25px;
+}
+
+/* Hero Section de Ciclos */
+.ciclos-hero {
+    background: transparent;
+    padding: 30px 20px;
+    text-align: center;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.ciclos-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(200,200,200,0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.ciclos-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ciclos-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+.ciclos-title i {
+    font-size: 3.5rem;
+}
+
+.ciclos-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.8;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Contenido de Ciclos */
+.ciclos-content-section {
+    padding: 60px 20px;
+    background: transparent;
+    min-height: 400px;
+}
+
+.ciclos-content-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.ciclos-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    display: none;
+    animation: fadeInCiclo 0.5s ease-in-out;
+}
+
+.ciclos-content.active {
+    display: block;
+}
+
+@keyframes fadeInCiclo {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ciclos-content h2 {
+    font-size: 2.3rem;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ciclos-content h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.ciclos-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.ciclo-intro {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 30px;
+}
+
+/* Importance Grid */
+.importance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.importance-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.importance-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(31, 38, 135, 0.2);
+}
+
+.importance-card i {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 20px;
+    display: block;
+    opacity: 0.9;
+}
+
+.importance-card h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.importance-card p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.ciclos-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.ciclos-content li {
+    padding: 12px 0 12px 30px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.ciclos-content li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* Glassmorphism Card */
+.ciclo-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 40px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-top: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    transition: all 0.3s ease;
+}
+
+.ciclo-card:hover {
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
+}
+
+.ciclo-text {
+    flex: 1;
+}
+
+.ciclo-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ciclos-large-icon {
+    font-size: 8rem;
+    color: #667eea;
+    opacity: 0.2;
+}
+
+.formula {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1.1rem;
+    font-family: 'Courier New', monospace;
+    margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ciclos-title {
+        font-size: 2.2rem;
+    }
+
+    .ciclos-title i {
+        font-size: 2.2rem;
+    }
+
+    .ciclos-subtitle {
+        font-size: 1rem;
+    }
+
+    .ciclos-menu-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ciclos-menu-link {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ciclos-submenu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.2);
+        margin-top: 5px;
+        min-width: auto;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .ciclos-menu-item.has-submenu:hover .ciclos-submenu {
+        transform: none;
+        opacity: 1;
+    }
+
+    .ciclo-card {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 25px;
+    }
+
+    .ciclos-large-icon {
+        font-size: 5rem;
+    }
+
+    .ciclos-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .ciclos-menu-section {
+        top: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ciclos-title {
+        font-size: 1.8rem;
+    }
+
+    .ciclos-title i {
+        font-size: 1.8rem;
+    }
+
+    .ciclos-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .ciclos-menu-link {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+
+    .ciclos-icon {
+        font-size: 1rem;
+    }
+
+    .ciclo-card {
+        padding: 15px;
+    }
+
+    .ciclos-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .ciclos-content h3 {
+        font-size: 1.2rem;
+    }
+}
