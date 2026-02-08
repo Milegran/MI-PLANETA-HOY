@@ -58,8 +58,8 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255,255,255,0.15);
-    border: 2px solid rgba(255,255,255,0.3);
+    background: rgba(22, 66, 23, 0.382);
+    border: 2px solid rgba(17, 46, 13, 0.3);
     color: rgba(255,255,255,0.8);
     padding: 12px 20px;
     border-radius: 25px;
@@ -72,8 +72,8 @@ body {
 }
 
 .ciclos-menu-link:hover {
-    background: rgba(255,255,255,0.25);
-    border-color: rgba(255,255,255,0.5);
+    background: rgba(52, 86, 59, 0.25);
+    border-color: rgba(47, 75, 47, 0.5);
     color: white;
     transform: scale(1.05);
 }
