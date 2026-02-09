@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seres Vivos de Panamá - KUNAP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/index-style.css">
+    <link rel="stylesheet" href="CSS/vivos-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pantalla de carga -->
+    <div class="loading-container" id="loadingScreen">
+        <!-- Elementos de naturaleza -->
+        <div class="nature-elements">
+            <div class="mountain mountain-1"></div>
+            <div class="mountain mountain-2"></div>
+            <div class="mountain mountain-3"></div>
+            <div class="mountain mountain-4"></div>
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+        </div>
+        
+        <!-- Contenedor del sol animado -->
+        <div class="sun-container-loading">
+            <!-- Anillos del sol -->
+            <div class="sun-ring sun-ring-1"></div>
+            <div class="sun-ring sun-ring-2"></div>
+            <div class="sun-ring sun-ring-3"></div>
+            
+            <!-- Rayos del sol -->
+            <div class="sun-rays-loading">
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+            </div>
+            
+            <!-- Sol central -->
+            <div class="sun-loading"></div>
+            
+            <!-- Partículas solares -->
+            <div class="solar-particles" id="solarParticles"></div>
+        </div>
+        
+        <!-- Logo -->
+        <div class="loading-logo">
+            <i class="fas fa-sun"></i>
+        </div>
+        
+        <!-- Texto -->
+        <div class="loading-text">
+            <span class="loading-dots">Cargando</span>
+        </div>
+        
+        <!-- Barra de progreso -->
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        
+        <!-- Mensaje -->
+        <div class="inspiration-message">
+            "El sol ilumina nuestro camino hacia un Panamá más verde y conectado con la naturaleza"
+        </div>
+    </div>
+
+    <div class="planet-background">
+        <div class="pulse-animation"></div>
+        <div class="floating-leaves">
+            <div class="leaf leaf1"><i class="fas fa-leaf"></i></div>
+            <div class="leaf leaf2"><i class="fas fa-leaf"></i></div>
+            <div class="leaf leaf3"><i class="fas fa-leaf"></i></div>
+            <div class="leaf leaf4"><i class="fas fa-leaf"></i></div>
+            <div class="leaf leaf5"><i class="fas fa-leaf"></i></div>
+            <div class="leaf leaf6"><i class="fas fa-leaf"></i></div>
+            <div class="leaf leaf7"><i class="fas fa-leaf"></i></div>
+            <div class="leaf leaf8"><i class="fas fa-leaf"></i></div>
+        </div>
+        <div class="sun-animation">
+            <div class="sun"></div>
+            <div class="sun-rays"></div>
+        </div>
+        <div class="water-flow"></div>
+    </div>
+
+    <div class="container with-fixed-header">
+        <!-- Encabezado IDÉNTICO al index.html -->
+        <header class="header">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-controls="sideMenu" aria-expanded="false">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
+            </button>
+
+            <div class="header-left">
+                <!-- Coloca aquí tu PNG: reemplaza src por la ruta real -->
+                <img src="IMG/KUNAP-LOGO.png" alt="KUNAP logo" class="header-logo">
+            </div>
+
+            <div class="header-actions">
+                <button class="btn-community" id="communityBtn">
+                    <i class="fas fa-users"></i>
+                    <span>Comunidad</span>
+                </button>
+                <button class="btn-share" id="shareBtn">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+                <button class="btn-highlight" id="highlightBtn">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Registrarse</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Side menu drawer -->
+        <nav id="sideMenu" class="side-menu" aria-hidden="true">
+            <div class="menu-header">
+                <h2 class="menu-title">MENÚ</h2>
+                <button class="menu-close" id="menuCloseBtn" aria-label="Cerrar menú">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <a class="menu-link" href="index.html">
+                        <i class="fas fa-home menu-icon"></i>
+                        Inicio
+                    </a>
+                </li>
+
+                <li class="menu-item has-children">
+                    <button class="menu-link">
+                        <i class="fas fa-thermometer-half menu-icon"></i>
+                        Cambio Climático
+                        <span class="toggle-icon"><i class="fas fa-chevron-right"></i></span>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="#"><i class="fas fa-arrows-alt-h submenu-icon"></i> Adaptación</a></li>
+                        <li><a href="#"><i class="fas fa-shield-alt submenu-icon"></i> Resiliencia Climática</a></li>
+                        <li><a href="#"><i class="fas fa-leaf submenu-icon"></i> Mitigación</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item has-children">
+                    <button class="menu-link">
+                        <i class="fas fa-leaf menu-icon"></i>
+                        Naturaleza Viva
+                        <span class="toggle-icon"><i class="fas fa-chevron-right"></i></span>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="#"><i class="fas fa-globe-americas submenu-icon"></i> Ecosistemas</a></li>
+                        <li><a href="#"><i class="fas fa-seedling submenu-icon"></i> Plantas y Árboles</a></li>
+                        <li><a href="#"><i class="fas fa-dove submenu-icon"></i> Animales</a></li>
+                        <li><a href="#"><i class="fas fa-mountain submenu-icon"></i> Factores Naturales</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a class="menu-link" href="ciclos.html">
+                        <i class="fas fa-recycle menu-icon"></i>
+                        Ciclos
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a class="menu-link active" href="vivos.html">
+                        <i class="fas fa-paw menu-icon"></i>
+                        Seres Vivos
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="noticias.html">
+                        <i class="fas fa-newspaper menu-icon"></i>
+                        Noticias Ambientales
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="foro.html">
+                        <i class="fas fa-comments menu-icon"></i>
+                        Foro Ambiental
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Seres Vivos Hero Section -->
+        <section class="vivos-hero">
+            <div class="vivos-hero-content">
+                <h1 class="vivos-title">
+                    <i class="fas fa-paw"></i>
+                    Seres Vivos de Panamá
+                </h1>
+                <p class="vivos-subtitle">Conocer para respetar, respetar para proteger.</p>
+                
+                <div class="vivos-tags">
+                    <span class="tag">Panamá</span>
+                    <span class="tag">Biodiversidad</span>
+                    <span class="tag">Educación ambiental</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Section - MODIFICADO CON FAUNA Y FLORA MARINA -->
+        <section class="vivos-filters">
+            <div class="filters-wrapper">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">
+                        <span>Todos</span>
+                    </button>
+                    <button class="filter-btn" data-filter="fauna">
+                        <i class="fas fa-paw"></i>
+                        <span>Fauna</span>
+                    </button>
+                    <button class="filter-btn" data-filter="flora">
+                        <i class="fas fa-seedling"></i>
+                        <span>Flora Terrestre</span>
+                    </button>
+                    <button class="filter-btn" data-filter="fauna-marina">
+                        <i class="fas fa-fish"></i>
+                        <span>Fauna Marina</span>
+                    </button>
+                    <button class="filter-btn" data-filter="flora-marina">
+                        <i class="fas fa-water"></i>
+                        <span>Flora Marina</span>
+                    </button>
+                    <button class="filter-btn" data-filter="endemicos">
+                        <i class="fas fa-star"></i>
+                        <span>Endémicos</span>
+                    </button>
+                    <button class="filter-btn" data-filter="peligro">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>En peligro</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vivos Content Section -->
+        <section class="vivos-section">
+            <div class="vivos-container">
+                <!-- Tarjeta 1 - Jaguar -->
+                <article class="vivo-card" data-category="fauna peligro">
+                    <div class="vivo-image">
+                        <img src="https://images.squarespace-cdn.com/content/v1/657b302ad0d11e71b22b40c3/0db3ff01-d7b3-407f-a6e3-1e02df50fb5d/photo_1494.jpg?format=2500w" 
+                             alt="Jaguar"
+                             class="vivo-imagen-real"
+                             width="350" 
+                             height="200">
+                        <span class="vivo-tag fauna-tag">Fauna</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Jaguar</h3>
+                        <p class="vivo-cientifico"><em>Panthera onca</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge vulnerable">Vulnerable</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">El mayor felino de América y símbolo de la fauna panameña. Habita en las selvas tropicales del país.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Selvas tropicales de Panamá</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 2 - Águila Harpía -->
+                <article class="vivo-card" data-category="fauna peligro endemicos">
+                    <div class="vivo-image">
+                        <img src="https://cdn1.matadornetwork.com/blogs/2/2019/01/aguila-arpia-1200x854.jpg" 
+                            alt="Águila Harpía"
+                            class="vivo-imagen-real"
+                            width="350" 
+                            height="200">
+                        <span class="vivo-tag fauna-tag">Fauna</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Águila Harpía</h3>
+                        <p class="vivo-cientifico"><em>Harpia harpyja</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge peligro">En peligro</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">El ave nacional de Panamá y una de las águilas más grandes y poderosas del mundo.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Selvas Chocó-Darién</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 3 - Rana Dorada -->
+                <article class="vivo-card" data-category="fauna peligro endemicos">
+                    <div class="vivo-image">
+                        <img src="https://static.tvn-2.com/clip/b555544a-a64c-40d4-85df-8d7130e93509_16-9-aspect-ratio_default_0.webp" 
+                            alt="Rana Dorada"
+                            class="vivo-imagen-real"
+                            width="350" 
+                            height="200">
+                        <span class="vivo-tag fauna-tag">Fauna</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Rana Dorada</h3>
+                        <p class="vivo-cientifico"><em>Atelopus zeteki</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge peligro">En peligro</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">Símbolo nacional de Panamá y una de las especies más emblemáticas en peligro de extinción.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Alto de Campana</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 4 - Orquídea Panameña (FLORA TERRESTRE) -->
+                <article class="vivo-card" data-category="flora endemicos">
+                    <div class="vivo-image">
+                        <img src="https://i.pinimg.com/736x/e1/1b/f8/e11bf8ed99f1994289a19c0e404ae910.jpg" 
+                            alt="Orquídea Panameña"
+                            class="vivo-imagen-real"
+                            width="350" 
+                            height="200">
+                        <span class="vivo-tag flora-tag">Flora Terrestre</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Orquídea Panameña</h3>
+                        <p class="vivo-cientifico"><em>Peristeria elata</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge estable">Flor nacional</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">Conocida como "Flor del Espíritu Santo", es la flor nacional de Panamá y una orquídea endémica.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Bosques húmedos del interior</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 5 - Pez Sierra (FAUNA MARINA) -->
+                <article class="vivo-card" data-category="fauna-marina peligro">
+                    <div class="vivo-image">
+                        <img src="https://larazon.co/wp-content/uploads/2021/02/pez-sierra-pristiformes-1024x644-1-768x483.jpg" 
+                            alt="Pez Sierra"
+                            class="vivo-imagen-real"
+                            width="350" 
+                            height="200">
+                        <span class="vivo-tag fauna-marina-tag">Fauna Marina</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Pez Sierra</h3>
+                        <p class="vivo-cientifico"><em>Pristis pristis</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge peligro">En peligro</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">Pez cartilaginoso con un rostro en forma de sierra que habita en las aguas costeras de Panamá.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Golfo de San Miguel</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 6 - Tapir Centroamericano -->
+                <article class="vivo-card" data-category="fauna">
+                    <div class="vivo-image">
+                       <img src="https://puravida.travel/wp-content/uploads/2017/06/Isla-Violin_-Corvovado_Tapir.jpg" 
+                            alt="Tapir Centroamericano"
+                            class="vivo-imagen-real"
+                            width="350" 
+                            height="200">
+                        <span class="vivo-tag fauna-tag">Fauna</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Tapir Centroamericano</h3>
+                        <p class="vivo-cientifico"><em>Tapirus bairdii</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge vulnerable">Vulnerable</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">El mamífero terrestre más grande de Centroamérica, crucial para la dispersión de semillas.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Selvas de Panamá</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 7 - Árbol de Panamá (FLORA TERRESTRE) -->
+                <article class="vivo-card" data-category="flora">
+                    <div class="vivo-image">
+                         <img src="https://live.staticflickr.com/3289/2832402329_3f4e689d88_b.jpg" 
+                            alt="Árbol de Panamá"
+                            class="vivo-imagen-real"
+                            width="350" 
+                            height="200">
+                        <span class="vivo-tag flora-tag">Flora Terrestre</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Árbol de Panamá</h3>
+                        <p class="vivo-cientifico"><em>Stereulia apetala</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge estable">Árbol nacional</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">Árbol nacional de Panamá, conocido por su gran tamaño y por ser hábitat de diversas especies.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Zonas bajas y húmedas</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 8 - Rana Flecha Verde y Negra -->
+                <article class="vivo-card" data-category="fauna peligro">
+                    <div class="vivo-image">
+                        <img src="https://www.reptilmadrid.com/wp-content/uploads/2022/04/rana-flecha-dendrobates-auratus.jpg" 
+                            alt="Rana Flecha Verde y Negra"
+                            class="vivo-imagen-real"
+                            width="350" 
+                            height="200">
+                        <span class="vivo-tag fauna-tag">Fauna</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Rana Flecha Verde y Negra</h3>
+                        <p class="vivo-cientifico"><em>Dendrobates auratus</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge peligro">En peligro</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">Anfibio colorido y tóxico que habita en los bosques húmedos de Panamá.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Bosque húmedo</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 9 - Mangle Rojo (FLORA MARINA) -->
+                <article class="vivo-card" data-category="flora-marina">
+                    <div class="vivo-image">
+                        <img src="https://news.cgtn.com/news/2020-12-14/Egypt-s-mangroves-project-contributes-a-triple-win-official-Wd8U3Rcjmg/img/c22655681ce7409186abe796d15aef20/c22655681ce7409186abe796d15aef20-750.png" 
+                             alt="Mangle Rojo"
+                             class="vivo-imagen-real"
+                             width="350" 
+                             height="200">
+                        <span class="vivo-tag flora-marina-tag">Flora Marina</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Mangle Rojo</h3>
+                        <p class="vivo-cientifico"><em>Rhizophora mangle</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge estable">Estable</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">Especie clave en los ecosistemas de manglar, protege costas y sirve de hábitat para especies marinas.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Costas y manglares de Panamá</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 10 - Coral Cuerno de Alce (FLORA MARINA) -->
+                <article class="vivo-card" data-category="flora-marina peligro">
+                    <div class="vivo-image">
+                        <img src="https://media.istockphoto.com/photos/elkhorn-coral-picture-id669032356?k=6&m=669032356&s=612x612&w=0&h=S1IBLxNsHM_ckIcS-b_rwnjYtlkiVwpCsKITVyQIC10=" 
+                             alt="Coral Cuerno de Alce"
+                             class="vivo-imagen-real"
+                             width="350" 
+                             height="200">
+                        <span class="vivo-tag flora-marina-tag">Flora Marina</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Coral Cuerno de Alce</h3>
+                        <p class="vivo-cientifico"><em>Acropora palmata</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge peligro">En peligro</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">Corales formadores de arrecifes cruciales para la biodiversidad marina panameña.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Arrecifes de Bocas del Toro</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 11 - Tortuga Carey (FAUNA MARINA) -->
+                <article class="vivo-card" data-category="fauna-marina peligro">
+                    <div class="vivo-image">
+                        <img src="https://images.reeflifesurvey.com/0/species_c3_5774942365681.w1000.h666.JPG" 
+                             alt="Tortuga Carey"
+                             class="vivo-imagen-real"
+                             width="350" 
+                             height="200">
+                        <span class="vivo-tag fauna-marina-tag">Fauna Marina</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Tortuga Carey</h3>
+                        <p class="vivo-cientifico"><em>Eretmochelys imbricata</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge peligro">En peligro</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">Tortuga marina que anida en las playas panameñas, amenazada por el comercio de su caparazón.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Playas del Caribe panameño</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 12 - Alga Sargazo (FLORA MARINA) -->
+                <article class="vivo-card" data-category="flora-marina">
+                    <div class="vivo-image">
+                        <img src="https://imgs.mongabay.com/wp-content/uploads/sites/20/2023/05/17123317/6-Rodriguez-close-up-of-floating-algae-in-Mexico.jpg" 
+                             alt="Alga Sargazo"
+                             class="vivo-imagen-real"
+                             width="350" 
+                             height="200">
+                        <span class="vivo-tag flora-marina-tag">Flora Marina</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Alga Sargazo</h3>
+                        <p class="vivo-cientifico"><em>Sargassum spp.</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge vulnerable">Vulnerable</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">Forma praderas submarinas esenciales como hábitat y zona de crianza para especies marinas.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Litorales del Caribe panameño</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 13 - Tiburón Ballena (FAUNA MARINA) -->
+                <article class="vivo-card" data-category="fauna-marina">
+                    <div class="vivo-image">
+                        <img src="https://th.bing.com/th/id/R.e65d0e94974fe5afc103bfdb09c05bda?rik=9ZtpjrOhRRM4pg&riu=http%3a%2f%2ffishesofaustralia.net.au%2fImages%2fImage%2fRhincodonTypus3ErikSchlogl.jpg&ehk=is%2fLc%2fb38CsavvjIWIy%2fuflLW87UV9xBJWW5Fuk8HvQ%3d&risl=&pid=ImgRaw&r=0" 
+                             alt="Tiburón Ballena"
+                             class="vivo-imagen-real"
+                             width="350" 
+                             height="200">
+                        <span class="vivo-tag fauna-marina-tag">Fauna Marina</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Tiburón Ballena</h3>
+                        <p class="vivo-cientifico"><em>Rhincodon typus</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge vulnerable">Vulnerable</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">El pez más grande del mundo, visita las aguas panameñas durante migraciones estacionales.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Archipiélago de Coiba</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 14 - Hierba de Tortuga (FLORA MARINA) -->
+                <article class="vivo-card" data-category="flora-marina">
+                    <div class="vivo-image">
+                        <img src="https://th.bing.com/th/id/R.85b4e7261844e74c50d63cac1a1d6820?rik=t52OUaT%2frNvvRw&pid=ImgRaw&r=0" 
+                             alt="Hierba de Tortuga"
+                             class="vivo-imagen-real"
+                             width="350" 
+                             height="200">
+                        <span class="vivo-tag flora-marina-tag">Flora Marina</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Hierba de Tortuga</h3>
+                        <p class="vivo-cientifico"><em>Thalassia testudinum</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge estable">Estable</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">Pastos marinos que forman importantes praderas submarinas para tortugas y peces juveniles.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Fondos marinos de Panamá</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 15 - Estrella de Mar Gigante (FAUNA MARINA) -->
+                <article class="vivo-card" data-category="fauna-marina">
+                    <div class="vivo-image">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.jO6c1_fiYwnSxyfsLxFZbwHaFj?w=1280&h=960&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                             alt="Estrella de Mar Gigante"
+                             class="vivo-imagen-real"
+                             width="350" 
+                             height="200">
+                        <span class="vivo-tag fauna-marina-tag">Fauna Marina</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Estrella de Mar Gigante</h3>
+                        <p class="vivo-cientifico"><em>Oreaster reticulatus</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge estable">Estable</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">Invertebrado marino colorido que habita en fondos arenosos y praderas de pastos marinos.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Arrecifes del Pacífico panameño</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 16 - Coral Cerebro (FLORA MARINA) -->
+                <article class="vivo-card" data-category="flora-marina">
+                    <div class="vivo-image">
+                        <img src="https://coralpedia.bio.warwick.ac.uk/images/optimized/diploria_strigosa04.jpg" 
+                             alt="Coral Cerebro"
+                             class="vivo-imagen-real"
+                             width="350" 
+                             height="200">
+                        <span class="vivo-tag flora-marina-tag">Flora Marina</span>
+                    </div>
+                    <div class="vivo-content">
+                        <h3 class="vivo-nombre">Coral Cerebro</h3>
+                        <p class="vivo-cientifico"><em>Diploria strigosa</em></p>
+                        <div class="vivo-estado">
+                            <span class="estado-badge vulnerable">Vulnerable</span>
+                        </div>
+                        <div class="vivo-info">
+                            <p class="vivo-desc">Corales masivos con forma de cerebro que forman parte esencial de los arrecifes panameños.</p>
+                            <div class="vivo-habitat">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Arrecifes coralinos</span>
+                            </div>
+                        </div>
+                        <a href="#" class="vivo-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="load-more-btn">
+                    <span>Ver más especies</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Message Section -->
+        <section class="vivos-message-section">
+            <div class="vivos-message-content">
+                <div class="message-text">
+                    <p class="message-large">Si aprendemos a proteger, <span class="highlight">¡podemos cambiar su destino!</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="vivos-quote-section">
+            <div class="vivos-quote-content">
+                <p class="vivos-quote">
+                    <i class="fas fa-quote-left"></i>
+                    Cuando una <strong>especie desaparece</strong>, no solo perdemos vida, perdemos equilibrio.
+                    <i class="fas fa-quote-right"></i>
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="vivos-cta-section">
+            <div class="vivos-cta-content">
+                <h3 class="cta-title">¿Qué puedes hacer tú?</h3>
+                <div class="cta-buttons">
+                    <button class="action-btn btn-share-info">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Compartir información</span>
+                    </button>
+                    <button class="action-btn btn-join-community">
+                        <i class="fas fa-users"></i>
+                        <span>Unirme a la comunidad</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Home Button -->
+        <section class="back-to-home-section">
+            <a href="index.html" class="back-to-home-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span>Volver al Inicio</span>
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-message">
+                    <p class="footer-quote">
+                        <i class="fas fa-quote-left"></i>
+                        KUNAP es un espacio donde la información, la comunidad y la conciencia se conectan para cuidar la vida.
+                        <i class="fas fa-quote-right"></i>
+                    </p>
+                </div>
+                <div class="footer-copy">
+                    <p>© 2025 KUNAP - Conocimiento para la Unión con la Naturaleza y la Acción por Panamá</p>
+                    <p class="earth-message">
+                        <i class="fas fa-heart"></i> Cuidemos nuestro hogar
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Screen Script -->
+    <script>
+        // Generar partículas solares dinámicamente
+        const solarParticles = document.getElementById('solarParticles');
+        const particleCount = 20;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'solar-particle';
+            
+            // Posición aleatoria
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 120 + Math.random() * 80;
+            const tx = Math.cos(angle) * distance;
+            const ty = Math.sin(angle) * distance;
+            
+            // Asignar posición inicial
+            particle.style.left = '50%';
+            particle.style.top = '50%';
+            particle.style.setProperty('--tx', `${tx}px`);
+            particle.style.setProperty('--ty', `${ty}px`);
+            
+            // Retardo aleatorio en la animación
+            particle.style.animationDelay = `${Math.random() * 2}s`;
+            
+            // Tamaño aleatorio
+            const size = 3 + Math.random() * 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            solarParticles.appendChild(particle);
+        }
+        
+        // Ocultar pantalla de carga cuando la página esté completamente cargada
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loadingScreen');
+                
+                // Agregar clase hidden para ocultar con animación
+                loadingScreen.classList.add('hidden');
+                
+            }, 500); // Pequeña pausa para que vea la animación final
+        });
+
+        // También ocultar si tarda demasiado (máximo 8 segundos)
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loadingScreen');
+            if (!loadingScreen.classList.contains('hidden')) {
+                loadingScreen.classList.add('hidden');
+            }
+        }, 8000);
+    </script>
+
+    <script src="JS/MENU.js"></script>
+    <script src="JS/vivos.js"></script>
+</body>
+</html>
