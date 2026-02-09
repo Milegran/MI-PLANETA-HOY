@@ -1,0 +1,1647 @@
+/* ===================================
+   SERES VIVOS PAGE STYLES
+   Basado en index-style.css
+   =================================== */
+
+/* Fondo degradado verde para Seres Vivos (sin imagen) */
+.planet-background {
+    background-image: none !important;
+    background: linear-gradient(135deg, #153811, #1e5620) !important;
+}
+
+/* ===================================
+   LOADING SCREEN STYLES (igual que index)
+   =================================== */
+
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    background: linear-gradient(135deg, rgba(13, 43, 30, 0.98), rgba(26, 60, 47, 0.98));
+    overflow: hidden;
+    transition: all 0.8s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Elementos de naturaleza */
+.nature-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 127, 41, 0.2), rgba(5, 54, 19, 0.3));
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    animation: mountainAppear 1.5s ease-out forwards;
+}
+
+.mountain-1 {
+    left: -10%;
+    width: 40%;
+    height: 300px;
+    animation-delay: 0.2s;
+}
+
+.mountain-2 {
+    left: 20%;
+    width: 35%;
+    height: 250px;
+    animation-delay: 0.4s;
+}
+
+.mountain-3 {
+    right: 15%;
+    width: 45%;
+    height: 280px;
+    animation-delay: 0.6s;
+}
+
+.mountain-4 {
+    right: -5%;
+    width: 40%;
+    height: 260px;
+    animation-delay: 0.8s;
+}
+
+.cloud {
+    position: absolute;
+    top: 10%;
+    width: 120px;
+    height: 60px;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 100px;
+    animation: cloudFloat 8s infinite linear;
+}
+
+.cloud-1 {
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.cloud-2 {
+    top: 20%;
+    left: 20%;
+    animation-delay: 2s;
+    width: 150px;
+    height: 70px;
+}
+
+/* Sun Container */
+.sun-container-loading {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+    animation: sunFloat 8s infinite ease-in-out;
+}
+
+.sun-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #FF4500, #FF8C00, #FFD700);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 60px rgba(255, 215, 0, 0.8),
+        0 0 100px rgba(255, 140, 0, 0.6),
+        0 0 150px rgba(255, 69, 0, 0.4);
+    animation: sunPulse 3s infinite alternate ease-in-out;
+}
+
+.sun-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 50%;
+    animation: sunRing 4s infinite linear;
+}
+
+.sun-ring-1 {
+    width: 160px;
+    height: 160px;
+    animation-delay: 0s;
+}
+
+.sun-ring-2 {
+    width: 200px;
+    height: 200px;
+    animation-delay: 0.2s;
+}
+
+.sun-ring-3 {
+    width: 240px;
+    height: 240px;
+    animation-delay: 0.4s;
+}
+
+.sun-rays-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 280px;
+    animation: sunRaysRotate 20s infinite linear;
+}
+
+.sun-ray {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    transform-origin: center;
+}
+
+.sun-ray::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    border-radius: 2px;
+}
+
+.sun-ray:nth-child(1) { transform: rotate(0deg); }
+.sun-ray:nth-child(2) { transform: rotate(30deg); }
+.sun-ray:nth-child(3) { transform: rotate(60deg); }
+.sun-ray:nth-child(4) { transform: rotate(90deg); }
+.sun-ray:nth-child(5) { transform: rotate(120deg); }
+.sun-ray:nth-child(6) { transform: rotate(150deg); }
+.sun-ray:nth-child(7) { transform: rotate(180deg); }
+.sun-ray:nth-child(8) { transform: rotate(210deg); }
+.sun-ray:nth-child(9) { transform: rotate(240deg); }
+.sun-ray:nth-child(10) { transform: rotate(270deg); }
+.sun-ray:nth-child(11) { transform: rotate(300deg); }
+.sun-ray:nth-child(12) { transform: rotate(330deg); }
+
+.solar-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.solar-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 215, 0, 0.6);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    animation: particleFloat 3s ease-out forwards;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0.3);
+        opacity: 0;
+    }
+}
+
+.loading-logo {
+    font-size: 80px;
+    color: #ffdd00;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.loading-text {
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.loading-dots::after {
+    content: '';
+    animation: loading-dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes loading-dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+}
+
+.progress-container {
+    width: 300px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 221, 0, 0.2);
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ffdd00, #ffaa00, #ff8c00);
+    border-radius: 10px;
+    animation: progress 3s ease-in-out forwards;
+    width: 0%;
+}
+
+@keyframes progress {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+}
+
+.inspiration-message {
+    position: absolute;
+    bottom: 30px;
+    max-width: 500px;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+/* Animaciones de carga */
+@keyframes sunFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes sunPulse {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 
+            0 0 60px rgba(255, 215, 0, 0.8),
+            0 0 100px rgba(255, 140, 0, 0.6),
+            0 0 150px rgba(255, 69, 0, 0.4);
+    }
+    50% { 
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 
+            0 0 80px rgba(255, 215, 0, 1),
+            0 0 130px rgba(255, 140, 0, 0.8),
+            0 0 180px rgba(255, 69, 0, 0.6);
+    }
+}
+
+@keyframes sunRing {
+    0% { 
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% { 
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0;
+    }
+}
+
+@keyframes sunRaysRotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes mountainAppear {
+    0% { 
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% { 
+        opacity: 0.8;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cloudFloat {
+    0% { transform: translateX(-100px); opacity: 0; }
+    10% { opacity: 0.3; }
+    90% { opacity: 0.3; }
+    100% { transform: translateX(calc(100vw + 100px)); opacity: 0; }
+}
+
+/* Responsive Loading Screen */
+@media (max-width: 768px) {
+    .sun-container-loading {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .sun-loading {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .loading-text {
+        font-size: 24px;
+    }
+    
+    .progress-container {
+        width: 250px;
+    }
+    
+    .loading-logo {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sun-container-loading {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .sun-loading {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .loading-text {
+        font-size: 20px;
+    }
+    
+    .progress-container {
+        width: 200px;
+    }
+    
+    .loading-logo {
+        font-size: 50px;
+    }
+    
+    .inspiration-message {
+        font-size: 12px;
+        padding: 0 20px;
+    }
+}
+
+/* Back to Home Section */
+.back-to-home-section {
+    max-width: 1200px;
+    margin: 60px auto 40px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.back-to-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, rgba(255, 221, 0, 0.15), rgba(255, 170, 0, 0.1));
+    border: 2px solid rgba(255, 221, 0, 0.3);
+    color: #ffdd00;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.back-to-home-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 221, 0, 0.25), rgba(255, 170, 0, 0.15));
+    border-color: #ffdd00;
+    transform: translateX(-5px);
+    box-shadow: 0 12px 30px rgba(255, 221, 0, 0.25);
+}
+
+.back-to-home-btn i {
+    transition: transform 0.3s ease;
+}
+
+.back-to-home-btn:hover i {
+    transform: translateX(-3px);
+}
+
+/* ===================================
+   SERES VIVOS HERO SECTION
+   =================================== */
+/* ===================================
+   SERES VIVOS HERO SECTION - Actualizado con imagen 4K
+   =================================== */
+.vivos-hero {
+    margin-top: var(--header-height);
+    padding: 80px 40px 60px; /* Reducido el padding vertical */
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), 
+                url('https://verpanama.com/wp-content/uploads/2020/08/cotinga-1536x1152.jpg');
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* AJUSTE CLAVE: Mostrar la parte superior de la imagen donde está el pájaro */
+    background-position: center 30%;
+    backdrop-filter: blur(3px);
+    /* ALTURA REDUCIDA Y CONTROLADA */
+    height: 270px; /* Altura fija y más delgada */
+    max-height: 370px;
+    min-height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vivos-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(60, 68, 62, 0.575), rgba(27, 37, 28, 0.652));
+    z-index: 0;
+    backdrop-filter: blur(5px); /* Efecto de desenfoque extra */
+}
+
+.vivos-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+.vivos-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.vivos-title i {
+    font-size: 3rem;
+    color: #ffdd00;
+    animation: bounce 2s infinite;
+    text-shadow: 0 0 15px rgba(255, 221, 0, 0.5);
+}
+
+.vivos-subtitle {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 30px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.vivos-tags {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.tag {
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tag:hover {
+    background: rgba(255, 221, 0, 0.3);
+    border-color: #ffdd00;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 221, 0, 0.3);
+}
+
+/* Para mejor calidad de imagen, agregamos ajustes responsivos */
+@media (min-width: 1920px) {
+    .vivos-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), 
+                    url('https://verpanama.com/wp-content/uploads/2020/08/cotinga-1536x1152.jpg');
+        background-size: cover;
+        /* En pantallas grandes, ajustamos aún más para ver el pájaro */
+        background-position: center 25%;
+        height: 550px; /* Un poco más alto en pantallas grandes */
+    }
+}
+
+/* Asegurar que el texto sea legible sobre la imagen */
+@media (max-width: 768px) {
+    .vivos-hero {
+        padding: 60px 20px 40px;
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), 
+                    url('https://verpanama.com/wp-content/uploads/2020/08/cotinga-1536x1152.jpg');
+        /* En móviles, altura aún más reducida */
+        height: 400px;
+        max-height: 400px;
+        min-height: 350px;
+        background-position: center 35%; /* Ajuste para móvil */
+    }
+    
+    .vivos-hero::before {
+        background: linear-gradient(135deg, rgba(60, 68, 62, 0.7), rgba(27, 37, 28, 0.8));
+    }
+    
+    .vivos-title {
+        font-size: 2.5rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .vivos-subtitle {
+        font-size: 1.4rem;
+    }
+}
+
+/* Para tablets */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .vivos-hero {
+        height: 450px;
+        background-position: center 28%;
+    }
+}
+
+/* Animación bounce si no la tienes */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* ===================================
+   FILTER SECTION - MODIFICADO PARA FAUNA Y FLORA MARINA
+   =================================== */
+.vivos-filters {
+    padding: 40px 40px 30px;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: var(--header-height);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.filters-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.filter-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 221, 0, 0.5);
+    color: #ffdd00;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    border-color: #4CAF50;
+    color: white;
+    font-weight: 700;
+}
+
+.filter-btn i {
+    font-size: 1.1rem;
+}
+
+/* ===================================
+   VIVOS SECTION - MODIFICADO PARA 4 COLUMNAS
+   =================================== */
+.vivos-section {
+    max-width: 1400px; /* Aumentado para 4 columnas */
+    margin: 60px auto;
+    padding: 0 40px;
+}
+
+.vivos-container {
+    display: grid;
+    /* 4 columnas en pantallas grandes */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* ===================================
+   VIVO CARD - TARJETAS UNIFORMES
+   =================================== */
+.vivo-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(76, 175, 80, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    animation: cardEnter 0.6s ease-out backwards;
+    /* Tarjetas uniformes */
+    min-height: 480px;
+}
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animaciones de entrada escalonadas para 16 tarjetas */
+.vivo-card:nth-child(1) { animation-delay: 0.1s; }
+.vivo-card:nth-child(2) { animation-delay: 0.2s; }
+.vivo-card:nth-child(3) { animation-delay: 0.3s; }
+.vivo-card:nth-child(4) { animation-delay: 0.4s; }
+.vivo-card:nth-child(5) { animation-delay: 0.5s; }
+.vivo-card:nth-child(6) { animation-delay: 0.6s; }
+.vivo-card:nth-child(7) { animation-delay: 0.7s; }
+.vivo-card:nth-child(8) { animation-delay: 0.8s; }
+.vivo-card:nth-child(9) { animation-delay: 0.9s; }
+.vivo-card:nth-child(10) { animation-delay: 1.0s; }
+.vivo-card:nth-child(11) { animation-delay: 1.1s; }
+.vivo-card:nth-child(12) { animation-delay: 1.2s; }
+.vivo-card:nth-child(13) { animation-delay: 1.3s; }
+.vivo-card:nth-child(14) { animation-delay: 1.4s; }
+.vivo-card:nth-child(15) { animation-delay: 1.5s; }
+.vivo-card:nth-child(16) { animation-delay: 1.6s; }
+
+.vivo-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(76, 175, 80, 0.5);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(76, 175, 80, 0.15);
+}
+
+/* Vivo Image - Tamaño uniforme */
+.vivo-image {
+    position: relative;
+    width: 100%;
+    height: 220px; /* Altura uniforme */
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.4), rgba(46, 125, 50, 0.3));
+}
+
+.vivo-imagen-real {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.vivo-card:hover .vivo-imagen-real {
+    transform: scale(1.05);
+}
+
+/* NUEVAS ETIQUETAS PARA FAUNA Y FLORA MARINA */
+.vivo-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    text-transform: uppercase;
+}
+
+.fauna-tag {
+    background: rgba(255, 107, 107, 0.7);
+    border-color: rgba(255, 107, 107, 0.5);
+}
+
+.flora-tag {
+    background: rgba(66, 184, 131, 0.7);
+    border-color: rgba(66, 184, 131, 0.5);
+}
+
+/* NUEVAS ETIQUETAS PARA MARINOS */
+.fauna-marina-tag {
+    background: rgba(52, 152, 219, 0.7);
+    border-color: rgba(52, 152, 219, 0.5);
+}
+
+.flora-marina-tag {
+    background: rgba(155, 89, 182, 0.7);
+    border-color: rgba(155, 89, 182, 0.5);
+}
+
+/* Vivo Content - Contenido uniforme */
+.vivo-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Altura mínima para uniformidad */
+    min-height: 260px;
+}
+
+.vivo-nombre {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px;
+    line-height: 1.3;
+    min-height: 3.5rem;
+}
+
+.vivo-cientifico {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+    font-style: italic;
+    min-height: 1.5rem;
+}
+
+.vivo-estado {
+    margin-bottom: 15px;
+    min-height: 2.5rem;
+}
+
+.estado-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.estado-badge.peligro {
+    background: rgb(231, 57, 45);
+    color: #ffffff;
+    border: 1px solid rgba(215, 96, 87, 0.511);
+}
+
+.estado-badge.vulnerable {
+    background: rgb(255, 153, 0);
+    color: #ffffff;
+    border: 1px solid rgba(255, 152, 0, 0.4);
+}
+
+.estado-badge.estable {
+    background: rgb(255, 255, 255);
+    color: #054907;
+    border: 1px solid rgba(76, 175, 80, 0.4);
+}
+
+.estado-badge.extinto {
+    background: rgba(96, 125, 139, 0.2);
+    color: #607D8B;
+    border: 1px solid rgba(96, 125, 139, 0.4);
+}
+
+.vivo-info {
+    flex-grow: 1;
+    min-height: 120px;
+}
+
+.vivo-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.vivo-habitat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    min-height: 1.5rem;
+}
+
+.vivo-habitat i {
+    color: #4CAF50;
+}
+
+.vivo-link {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    min-height: 2.5rem;
+}
+
+.vivo-link:hover {
+    transform: translateX(5px);
+    color: #8BC34A;
+}
+
+/* ===================================
+   LOAD MORE BUTTON
+   =================================== */
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.load-more-btn {
+    padding: 14px 40px;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(56, 142, 60, 0.15));
+    border: 2px solid rgba(76, 175, 80, 0.4);
+    color: #4CAF50;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.load-more-btn:hover {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.3), rgba(56, 142, 60, 0.2));
+    border-color: #4CAF50;
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(76, 175, 80, 0.3);
+}
+
+.load-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.load-more-btn:hover i {
+    transform: translateY(3px);
+}
+
+/* ===================================
+   MESSAGE SECTION
+   =================================== */
+.vivos-message-section {
+    max-width: 900px;
+    margin: 80px auto 60px;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.vivos-message-content {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.3), rgba(46, 125, 50, 0.2));
+    border: 2px solid rgba(76, 175, 80, 0.3);
+    border-radius: 20px;
+    padding: 50px 40px;
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+.vivos-message-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+.message-text {
+    position: relative;
+    z-index: 1;
+}
+
+.message-large {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.4;
+}
+
+.highlight {
+    color: #ffdd00;
+    text-shadow: 0 2px 10px rgba(255, 221, 0, 0.5);
+}
+
+/* ===================================
+   QUOTE SECTION
+   =================================== */
+.vivos-quote-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 40px;
+}
+
+.vivos-quote-content {
+    background: linear-gradient(135deg, rgba(139, 195, 74, 0.2), rgba(85, 139, 47, 0.1));
+    border-left: 5px solid #8BC34A;
+    border-radius: 0 20px 20px 0;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+}
+
+.vivos-quote {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.6;
+    font-style: italic;
+    text-align: center;
+}
+
+.vivos-quote i:first-child {
+    color: #8BC34A;
+    margin-right: 15px;
+    font-size: 2rem;
+}
+
+.vivos-quote i:last-child {
+    color: #8BC34A;
+    margin-left: 15px;
+    font-size: 2rem;
+}
+
+.vivos-quote strong {
+    color: #ffdd00;
+}
+
+/* ===================================
+   CTA SECTION - Ajustada como en index.html
+   =================================== */
+.vivos-cta-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+}
+
+.vivos-cta-content {
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Botones de acción como en index.html */
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.action-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.btn-share-info {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.8), rgba(13, 71, 161, 0.8));
+    border-color: #2196F3;
+}
+
+.btn-share-info:hover {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 1), rgba(13, 71, 161, 1));
+    box-shadow: 0 15px 35px rgba(33, 150, 243, 0.4);
+}
+
+.btn-join-community {
+    background: linear-gradient(135deg, rgba(156, 39, 176, 0.8), rgba(106, 27, 154, 0.8));
+    border-color: #9C27B0;
+}
+
+.btn-join-community:hover {
+    background: linear-gradient(135deg, rgba(156, 39, 176, 1), rgba(106, 27, 154, 1));
+    box-shadow: 0 15px 35px rgba(156, 39, 176, 0.4);
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ===================================
+   RESPONSIVE DESIGN - MODIFICADO PARA 4 COLUMNAS
+   =================================== */
+
+/* Pantallas muy grandes (5 columnas) */
+@media (min-width: 1600px) {
+    .vivos-container {
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 1600px;
+    }
+}
+
+/* Pantallas grandes (4 columnas) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+    .vivos-container {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1400px;
+    }
+}
+
+/* Tablets grandes (3 columnas) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .vivos-container {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1000px;
+    }
+    
+    .vivo-card {
+        min-height: 460px;
+    }
+    
+    .vivo-image {
+        height: 200px;
+    }
+    
+    .vivo-content {
+        min-height: 260px;
+    }
+}
+
+/* Tablets medianas (2 columnas) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .vivos-container {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+    }
+    
+    .vivo-card {
+        min-height: 440px;
+    }
+    
+    .vivo-image {
+        height: 200px;
+    }
+    
+    .vivo-content {
+        min-height: 240px;
+    }
+    
+    .filter-group {
+        gap: 8px;
+    }
+    
+    .filter-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    
+    .vivos-title {
+        font-size: 2.5rem;
+    }
+
+    .vivos-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .message-large {
+        font-size: 1.8rem;
+    }
+
+    .vivos-quote {
+        font-size: 1.5rem;
+    }
+
+    .cta-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Tablets pequeñas y móviles (1 columna) */
+@media (max-width: 767px) {
+    .vivos-hero {
+        padding: 60px 20px 40px;
+    }
+
+    .vivos-title {
+        font-size: 2rem;
+    }
+
+    .vivos-title i {
+        font-size: 2rem;
+    }
+
+    .vivos-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .vivos-filters {
+        padding: 20px;
+    }
+
+    .vivos-section {
+        padding: 0 20px;
+    }
+
+    .vivos-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: 20px;
+    }
+    
+    .vivo-card {
+        min-height: 400px;
+        flex-direction: column;
+    }
+    
+    .vivo-image {
+        height: 180px;
+        width: 100%;
+    }
+    
+    .vivo-content {
+        padding: 20px;
+        min-height: 220px;
+    }
+    
+    .vivo-nombre {
+        font-size: 1.5rem;
+        min-height: 3rem;
+    }
+
+    .filter-group {
+        gap: 6px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .filter-btn {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+    
+    .filter-btn i {
+        font-size: 1rem;
+    }
+
+    .vivos-message-section,
+    .vivos-quote-section,
+    .vivos-cta-section {
+        padding: 0 20px;
+        margin: 40px auto;
+    }
+
+    .vivos-message-content {
+        padding: 30px 20px;
+    }
+
+    .message-large {
+        font-size: 1.5rem;
+    }
+
+    .vivos-quote-content {
+        padding: 25px;
+    }
+
+    .vivos-quote {
+        font-size: 1.3rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .tag {
+        padding: 6px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .load-more-btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 576px) {
+    .vivos-title {
+        font-size: 1.8rem;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .vivos-title i {
+        font-size: 1.5rem;
+    }
+
+    .vivos-subtitle {
+        font-size: 1rem;
+    }
+
+    .vivos-filters {
+        padding: 15px;
+    }
+    
+    .vivo-card {
+        min-height: 380px;
+    }
+    
+    .vivo-image {
+        height: 160px;
+    }
+    
+    .vivo-content {
+        padding: 16px;
+        min-height: 220px;
+    }
+    
+    .vivo-nombre {
+        font-size: 1.3rem;
+        min-height: 2.8rem;
+    }
+    
+    .vivo-desc {
+        font-size: 0.85rem;
+    }
+
+    .filter-group {
+        gap: 4px;
+    }
+    
+    .filter-btn {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+    
+    .filter-btn span {
+        display: none;
+    }
+    
+    .filter-btn i {
+        font-size: 1rem;
+        margin: 0;
+    }
+    
+    .filter-btn {
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+    }
+
+    .vivos-message-content {
+        padding: 20px 15px;
+    }
+
+    .message-large {
+        font-size: 1.3rem;
+    }
+
+    .vivos-quote-content {
+        padding: 20px;
+    }
+
+    .vivos-quote {
+        font-size: 1.1rem;
+    }
+
+    .cta-title {
+        font-size: 1.5rem;
+    }
+
+    .action-btn {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+
+    .vivos-tags {
+        gap: 10px;
+    }
+
+    .tag {
+        padding: 5px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Ajustes específicos para filtros en móviles */
+@media (max-width: 480px) {
+    .filter-group {
+        justify-content: flex-start;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .filter-btn {
+        font-size: 0.65rem;
+        padding: 5px 8px;
+    }
+    
+    .filter-btn i {
+        font-size: 0.9rem;
+    }
+}
+
+/* Ajustes para pantallas extra grandes */
+@media (min-width: 2000px) {
+    .vivos-container {
+        grid-template-columns: repeat(6, 1fr);
+        max-width: 2000px;
+        gap: 35px;
+    }
+    
+    .vivos-section {
+        max-width: 2000px;
+    }
+    
+    .vivo-card {
+        min-height: 500px;
+    }
+    
+    .vivo-image {
+        height: 250px;
+    }
+    
+    .vivo-nombre {
+        font-size: 1.8rem;
+    }
+    
+    .vivo-desc {
+        font-size: 1rem;
+    }
+}
+
+/* Ajustes para mejorar la legibilidad en pantallas grandes */
+@media (min-width: 1400px) {
+    .vivo-nombre {
+        font-size: 1.7rem;
+    }
+    
+    .vivo-desc {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    .vivo-content {
+        padding: 28px;
+    }
+}
+
+/* Ajustes para hover en dispositivos táctiles */
+@media (hover: none) {
+    .vivo-card:hover {
+        transform: none;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    
+    .vivo-card:active {
+        transform: scale(0.98);
+    }
+    
+    .filter-btn:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: white;
+    }
+    
+    .filter-btn.active:hover {
+        background: linear-gradient(135deg, #4CAF50, #2E7D32);
+        color: white;
+    }
+    
+    .tag:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: none;
+    }
+    
+    .action-btn:hover {
+        transform: none;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .action-btn:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Mejoras de accesibilidad para enfoque */
+.filter-btn:focus,
+.vivo-link:focus,
+.action-btn:focus,
+.load-more-btn:focus,
+.back-to-home-btn:focus {
+    outline: 2px solid #ffdd00;
+    outline-offset: 2px;
+}
+
+/* Mejora para contraste de texto */
+.vivo-nombre,
+.vivo-cientifico,
+.vivo-desc,
+.vivo-habitat {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Corrección para imágenes que no cargan */
+.vivo-imagen-real {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.4), rgba(46, 125, 50, 0.3));
+}
+
+.vivo-imagen-real:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.4), rgba(46, 125, 50, 0.3));
+    z-index: 1;
+}
+
+/* Estilos para el contador de especies */
+.species-counter {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .species-counter {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Estilos para mensajes de acción */
+.action-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: slideIn 0.5s ease, slideOut 0.5s ease 2.5s forwards;
+}
+
+.action-message i {
+    font-size: 1.5rem;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+
+/* Animación para filtros activos */
+.filter-btn.active {
+    animation: pulseFilter 2s infinite;
+}
+
+@keyframes pulseFilter {
+    0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+}
+
+/* Estilos para tarjetas expandidas */
+.vivo-card.expanded {
+    transform: scale(1.05) !important;
+    z-index: 10;
+    position: relative;
+}
